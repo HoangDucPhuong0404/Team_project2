@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<html lang="en">
+
 <head>
+<!--    <th:block th:replace="/layout/head :: head"/>-->
+    <title>Pegasus | </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
@@ -9,13 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/static/assets/gentella/production/images/favicon.ico" type="image/ico" />
 
-    <title>Pegasus | </title>
+
 
     <!-- Bootstrap -->
     <link href="/static/assets/gentella/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="/static/assets/gentella/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<!--    <link href="/static/assets/font-awesome-4.7.0/css/font-awesome.min.css">-->
+    <!--    <link href="/static/assets/font-awesome-4.7.0/css/font-awesome.min.css">-->
     <!-- NProgress -->
     <link href="/static/assets/gentella/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
@@ -65,8 +67,6 @@
                             <li><a><i class="fa fa-home" aria-hidden="true"></i> Home <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="index.html">Dashboard</a></li>
-                                    <li><a href="index2.html">Dashboard2</a></li>
-                                    <li><a href="index3.html">Dashboard3</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
@@ -968,7 +968,7 @@
         <!-- /footer content -->
     </div>
 </div>
-
+<!--<th:block th:replace ="/layout/script :: script"/>-->
 <!-- jQuery -->
 <script src="/static/assets/gentella/vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
@@ -1009,6 +1009,5 @@
 
 <!-- Custom Theme Scripts -->
 <script src="/static/assets/gentella/build/js/custom.min.js"></script>
-
 </body>
 </html>
