@@ -4,5 +4,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SizeRepository {
-    //Tao la Tan
+    //Tao la Tan - khoan hay push
 }
