@@ -13,4 +13,8 @@ public class HomeController {
         ModelAndView modelAndView = new ModelAndView("/hello");
         return modelAndView;
     }
+    @GetMapping("/login")
+    public ModelAndView showLogin(){
+        return new ModelAndView("/login/login");
+    }
 }

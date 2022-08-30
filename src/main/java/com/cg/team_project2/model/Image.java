@@ -6,15 +6,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "image")
+@Table(name = "images")
 @Entity
-public class Image {
+public class Image extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,11 +34,9 @@ public class Image {
     @Column(name = "cloud_id")
     private String cloudId;
 
-    @Column(name = "deleted")
-    private Boolean deleted;
 
     @OneToMany(mappedBy = "imageId")
-    private Set<Product> products = new LinkedHashSet<>();
+    private Set<Product> products = new HashSet<>();
 
 
 

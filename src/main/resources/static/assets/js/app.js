@@ -1,5 +1,6 @@
 class App {
 
+
     static DOMAIN = location.origin;
 
     static BASE_URL_AUTH = this.DOMAIN + "/api/auth";
@@ -18,6 +19,7 @@ class App {
     static SUCCESS_WITHDRAW = "Successful withdraw transaction !";
     static SUCCESS_TRANSFER = "Successful transfer transaction !";
     static SUCCESS_SUSPEND = "Succeeded client suspension !";
+
 
     static showSuspendedConfirmDialog() {
         return Swal.fire({
@@ -103,25 +105,39 @@ class LocationRegion {
     }
 }
 
-class Customer {
-    constructor(id, fullName, email, phone, locationRegion, balance) {
+class Product {
+    constructor(id,name, category, size, color,image ,title,price,quantity,status,description) {
         this.id = id;
-        this.fullName = fullName;
-        this.email = email;
-        this.phone = phone;
-        this.locationRegion = locationRegion;
-        this.balance = balance;
+        this.name = name;
+        this.category = category;
+        this.size = size;
+        this.color = color;
+        this.image = image;
+        this.title = title;
+        this.price = price;
+        this.quantity = quantity;
+        this.status = status
+        this.description = description;
     }
 }
 
-class Sender {
-    constructor(id, fullName, email, phone, locationRegion, balance) {
+class Order {
+    constructor(id ,user,fullName, email, phone, locationRegion,description, total) {
         this.id = id;
+        this.user = user
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
         this.locationRegion = locationRegion;
-        this.balance = balance;
+        this.description = description;
+        this.total = total;
+    }
+}
+class User{
+    constructor(id, userName, password) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
     }
 }
 
@@ -136,36 +152,33 @@ class Recipient {
     }
 }
 
-class Deposit {
-    constructor(customerId, fullName, balance, transactionAmount) {
-        this.customerId = customerId;
-        this.fullName = fullName;
-        this.balance = balance;
-        this.transactionAmount = transactionAmount;
+class Category {
+    constructor(id, category_name) {
+        this.id = id;
+        this.category_name = category_name;
     }
 }
 
-class Withdraw {
-    constructor(customerId, fullName, balance, transactionAmount) {
-        this.customerId = customerId;
-        this.fullName = fullName;
-        this.balance = balance;
-        this.transactionAmount = transactionAmount;
+class Color {
+    constructor(id, color_name) {
+        this.id = id;
+        this.color_name = color_name;
+
     }
 }
 
-class Transfer {
-    constructor(senderId, senderName, email, recipientId, recipientName, balance, transferAmount, fees, feesAmount, transactionAmount) {
-        this.senderId = senderId;
-        this.senderName = senderName;
+class Cart {
+    constructor(id, sessionId, token, content, email, fullName, mobile, status, totalBill, user) {
+        this.id = id;
+        this.sessionId = sessionId;
+        this.token = token;
+        this.content = content;
         this.email = email;
-        this.recipientId = recipientId;
-        this.recipientName = recipientName;
-        this.balance = balance;
-        this.transferAmount = transferAmount;
-        this.fees = fees;
-        this.feesAmount = feesAmount;
-        this.transactionAmount = transactionAmount;
+        this.fullName = fullName;
+        this.mobile = mobile;
+        this.status = status;
+        this.totalBill = totalBill;
+        this.user = user;
     }
 }
 
@@ -183,5 +196,15 @@ class TransferFull {
         this.fees = fees;
         this.feesAmount = feesAmount;
         this.transactionAmount = transactionAmount;
+    }
+}
+class Register {
+    constructor(id,fullName, phone, email, userName,password) {
+        this.id = id;
+        this.fullName = fullName;
+        this.phone = phone;
+        this.email = email;
+        this.userName= userName;
+        this.password = password;
     }
 }
